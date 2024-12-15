@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poiret+One&family=Wallpoet&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* || VARIALES */
+:root {
+    /* COLOURS */
+    --APP-BG-COLOUR: hsla(0, 0%, 100%, 0.85);
+    --FONT-COLOUR: #383838;
+    --PW-FIELD-BG-COLOUR: #383838;
+    --PW-FONT-COLOUR: rgb(252, 254, 255);
+    --DIGIT-BTN-COLOUR: white;
+    --CLEAR-BTN-COLOUR: white;
+    --BTN-ACTIVE-COLOUR: hsl(220, 21%, 23%);
+    --BTN-ACTIVE-FONT-COLOUR: whitesmoke;
+
+    /* OTHERS */
+    --APP-SHADOW: 0 0 5px 3px hsla(0, 0%, 0%, 0.5);
+    --BTN-SHADOW: 0 0 2px 1px hsla(0, 0%, 0%, 0.3)
+}
+
+
+/* || GENERAL */
+
+
+html {
+    background-image: url("/img/bg.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+    font-family: "Montserrat", Arial, Helvetica, sans-serif;
+    color: var(--FONT-COLOUR);
+
+}
+
+.app {
+    height: 85vh;
+    min-height: fit-content;
+    width: 85vw;
+    margin: 5% auto;
+    max-width: 800px;
+    min-width: 300px;
+    background-color: var(--APP-BG-COLOUR);
+    border-radius: 1rem;
+    box-shadow: var(--APP-SHADOW);
+    padding: 2vh 2vw 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+button {
+    box-shadow: var(--BTN-SHADOW);
+    font-family: "Poiret One";
+    font-weight: bold;
+    color: var(--FONT-COLOUR);
+}
+
+button:active {
+    box-shadow: none;
+    background-color: var(--BTN-ACTIVE-COLOUR);
+    color: var(--BTN-ACTIVE-FONT-COLOUR);
+
+}
+
+/* HEADER */
+
+header {
+    border-bottom: 0.5vh double dimgrey;
+    padding-bottom: 0.5vh;
+}
+
+h1 {
+    font-family: "Wallpoet";
+    font-weight: lighter;
+    font-size: clamp(1rem, 5vw, 3rem);
+    white-space: nowrap;
+    text-align: center;
+}
+
+/* MAIN */
+
+main {
+    height: 90%;
+    width: 100%;
+    min-height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.digit-box {
+    height: 35%;
+    min-height: fit-content;
+    padding: 0 5vw;
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+    align-items: center;
+}
+
+.digit-box h2 {
+    font-size: clamp(1rem, 1rem + 2vw, 3rem);
+}
+
+.digits {
+    width: 4.5rem;
+    height: 2.5rem;
+    font-size: 1.5rem;
+    padding: 0 0.5rem;
+    border: none;
+    border-radius: 0.5rem;
+}
+
+.button-box, .button-box div {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.digits {
+    background-color: var(--DIGIT-BTN-COLOUR);
+}
+
+
+.pw-box {
+    height: 35%;
+    min-height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.pw-box h2 {
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    white-space: nowrap;
+    padding: 0 1rem;
+    margin-bottom: calc(1rem + 2vh);
+}
+
+.pw-field {
+    width: 70%;
+    max-width: 400px;
+    height: calc(1rem + 2vh);
+    background-color: var(--PW-FIELD-BG-COLOUR);
+    color: var(--PW-FONT-COLOUR);
+    align-content: center;
+    margin-bottom: calc(1rem + 2vh);
+    border-radius: 2px;
+    border: none;
+}
+
+#pw {
+    text-align: center;
+    font-weight: 500;
+}
+
+.clear-pw {
+    font-size: calc(1rem + 1vh);
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    background-color: var(--CLEAR-BTN-COLOUR);
+}
+
+
+
+/* FOOTER */
+
+footer {
+    text-align: center;
+    font-size: calc(0.5rem + 1vh);
+    margin-bottom: 1rem;
+}

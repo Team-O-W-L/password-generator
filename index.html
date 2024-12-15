@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Wayne Lee">
+    <title>Mini Password Generator</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <div class="app">
+        <header>
+            <h1>Mini Passowrd Generator</h1>
+        </header>
+        <main>
+            <div class="digit-box">
+                <h2>How many digits?</h2>
+                <div class="button-box">
+                    <div>
+                        <button class="digits" onclick="sixDigit()">6</button>
+                        <button class="digits" onclick="eightDigit()">8</button>
+                    </div>
+                    <div>
+                        <button class="digits" onclick="tenDigit()">10</button>
+                        <button class="digits" onclick="twelveDigit()">12</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pw-box">
+                <h2>Newly generated password:</h2>
+                <div class="pw-field">
+                    <p id="pw" onclick="copyPassword()"></p>
+                </div>
+                <button class="clear-pw" onclick="clearPassword()">Clear Password</button>
+            </div>
+
+        </main>
+        <footer>
+            <p>&copy; Wayne Lee</p>
+        </footer>
+        <script src="js/script.js"></script>
+    </div>
+</body>
+
+</html>
