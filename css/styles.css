@@ -114,8 +114,9 @@ main {
 .length-selector select {
 	font-family: "Wallpoet";
 	padding: 3px 0 3px 8px;
-	width: 35%;
+	width: 50%;
 	height: 40px;
+	max-width: 150px;
 	border: none;
 	border-radius: 5px;
 	font-size: 30px;

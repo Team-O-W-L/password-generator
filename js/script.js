@@ -59,8 +59,8 @@ function generatePassword(pwLength, letters, numbers, symbols) {
 	return Password.join("");
 }
 
-function copyPassword() {
-	navigator.clipboard.writeText(pwText.textContent);
+function clearPassword() {
+	pwText.textContent = "";
 }
 
 function copyPassword() {
