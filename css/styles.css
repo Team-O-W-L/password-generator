@@ -1,182 +1,185 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poiret+One&family=Wallpoet&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poiret+One&family=Wallpoet&display=swap");
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 
-/* || VARIALES */
+/* || VARIABLES */
 :root {
-    /* COLOURS */
-    --APP-BG-COLOUR: hsla(0, 0%, 100%, 0.85);
-    --FONT-COLOUR: #383838;
-    --PW-FIELD-BG-COLOUR: #383838;
-    --PW-FONT-COLOUR: rgb(252, 254, 255);
-    --DIGIT-BTN-COLOUR: white;
-    --CLEAR-BTN-COLOUR: white;
-    --BTN-ACTIVE-COLOUR: hsl(220, 21%, 23%);
-    --BTN-ACTIVE-FONT-COLOUR: whitesmoke;
+	/* COLOURS */
+	--APP-BG-COLOUR: hsla(0, 0%, 100%, 0.85);
+	--FONT-COLOUR: #383838;
+	--PW-FIELD-BG-COLOUR: #383838;
+	--PW-FONT-COLOUR: rgb(252, 254, 255);
+	--BTN-COLOUR: white;
+	--BTN-ACTIVE-COLOUR: hsl(220, 21%, 23%);
+	--BTN-ACTIVE-FONT-COLOUR: whitesmoke;
 
-    /* OTHERS */
-    --APP-SHADOW: 0 0 5px 3px hsla(0, 0%, 0%, 0.5);
-    --BTN-SHADOW: 0 0 2px 1px hsla(0, 0%, 0%, 0.3)
+	/* GENERAL */
+	--FONT-FAMILY: "Montserrat", sans-serif;
+
+	/* OTHERS */
+	--APP-SHADOW: 0 0 5px 3px hsla(0, 0%, 0%, 0.5);
+	--BTN-SHADOW: 0 0 2px 1px hsla(0, 0%, 0%, 0.3);
 }
-
 
 /* || GENERAL */
 
-
 html {
-    background-image: url("/img/bg.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    height: 100vh;
-    font-family: "Montserrat", Arial, Helvetica, sans-serif;
-    color: var(--FONT-COLOUR);
-
+	background-image: url("/img/bg.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	height: 100vh;
+	font-family: var(--FONT-FAMILY);
 }
 
 .app {
-    height: 85vh;
-    min-height: fit-content;
-    width: 85vw;
-    margin: 5% auto;
-    max-width: 800px;
-    min-width: 300px;
-    background-color: var(--APP-BG-COLOUR);
-    border-radius: 1rem;
-    box-shadow: var(--APP-SHADOW);
-    padding: 2vh 2vw 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+	height: 90vh;
+	min-height: fit-content;
+	width: 85vw;
+	margin: 5% auto;
+	max-width: 700px;
+	max-height: 700px;
+	min-width: 300px;
+	background-color: var(--APP-BG-COLOUR);
+	border-radius: 10px;
+	box-shadow: var(--APP-SHADOW);
+	padding: 2vh 2vw 0;
 }
 
 button {
-    box-shadow: var(--BTN-SHADOW);
-    font-family: "Poiret One";
-    font-weight: bold;
-    color: var(--FONT-COLOUR);
+	box-shadow: var(--BTN-SHADOW);
+	font-family: "Poiret One";
+	font-weight: bold;
+	color: var(--FONT-COLOUR);
+	background-color: var(--BTN-COLOUR);
 }
 
 button:active {
-    box-shadow: none;
-    background-color: var(--BTN-ACTIVE-COLOUR);
-    color: var(--BTN-ACTIVE-FONT-COLOUR);
-
+	box-shadow: none;
+	background-color: var(--BTN-ACTIVE-COLOUR);
+	color: var(--BTN-ACTIVE-FONT-COLOUR);
 }
 
 /* HEADER */
-
 header {
-    border-bottom: 0.5vh double dimgrey;
-    padding-bottom: 0.5vh;
+	border-bottom: 0.5vh double dimgrey;
+	padding-bottom: 0.5vh;
+	display: flex;
+	justify-content: center;
 }
 
 h1 {
-    font-family: "Wallpoet";
-    font-weight: lighter;
-    font-size: clamp(1rem, 5vw, 3rem);
-    white-space: nowrap;
-    text-align: center;
+	font-family: "Wallpoet";
+	font-weight: lighter;
+	font-size: clamp(1rem, 4vw, 2.2rem);
+	white-space: nowrap;
+	text-align: center;
+	color: var(--FONT-COLOUR);
+	text-transform: uppercase;
 }
 
 /* MAIN */
 
 main {
-    height: 90%;
-    width: 100%;
-    min-height: fit-content;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-
+	height: 90%;
+	width: 100%;
+	min-height: fit-content;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
 }
 
-.digit-box {
-    height: 35%;
-    min-height: fit-content;
-    padding: 0 5vw;
-    display: flex;
-    flex-direction: column;
-    gap: 2vh;
-    align-items: center;
+.option-box {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 2vh 2vw;
 }
 
-.digit-box h2 {
-    font-size: clamp(1rem, 1rem + 2vw, 3rem);
+.option-box p {
+	font-size: clamp(1.2rem, 2vw, 1.5rem);
+	white-space: nowrap;
+	text-transform: capitalize;
+	margin-bottom: 8px;
 }
 
-.digits {
-    width: 4.5rem;
-    height: 2.5rem;
-    font-size: 1.5rem;
-    padding: 0 0.5rem;
-    border: none;
-    border-radius: 0.5rem;
+.length-selector {
+	margin-bottom: 2vh;
 }
 
-.button-box, .button-box div {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    flex-wrap: wrap;
+.length-selector select {
+	font-family: "Wallpoet";
+	padding: 3px 0 3px 8px;
+	width: 35%;
+	height: 40px;
+	border: none;
+	border-radius: 5px;
+	font-size: 30px;
+	text-align: center;
+	margin: 0 auto;
+	display: block;
+	background-color: hsla(0, 0%, 100%, 0.9);
 }
 
-.digits {
-    background-color: var(--DIGIT-BTN-COLOUR);
+.character-types-box {
+	margin-bottom: 2vh;
 }
 
+.character-types-box input[type="checkbox"] {
+	margin-right: 10px;
+	width: 20px;
+	height: 20px;
+}
+
+.character-types-box label {
+	font-size: 20px;
+	position: relative;
+	bottom: 4px;
+}
+
+#generate-pw-btn,
+.clear-pw-btn {
+	padding: 10px 15px;
+	border: none;
+	border-radius: 10px;
+	font-size: 22px;
+}
 
 .pw-box {
-    height: 35%;
-    min-height: fit-content;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 2vh 2vw;
 }
 
 .pw-box h2 {
-    font-size: clamp(1rem, 2vw, 1.5rem);
-    white-space: nowrap;
-    padding: 0 1rem;
-    margin-bottom: calc(1rem + 2vh);
+	text-transform: capitalize;
+	font-size: clamp(1rem, 2vw, 1.5rem);
+	white-space: nowrap;
+	margin-bottom: 10px;
 }
 
 .pw-field {
-    width: 70%;
-    max-width: 400px;
-    height: calc(1rem + 2vh);
-    background-color: var(--PW-FIELD-BG-COLOUR);
-    color: var(--PW-FONT-COLOUR);
-    align-content: center;
-    margin-bottom: calc(1rem + 2vh);
-    border-radius: 2px;
-    border: none;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 70%;
+	height: 50px;
+	margin-bottom: 10px;
+	background-color: var(--PW-FIELD-BG-COLOUR);
+	color: var(--PW-FONT-COLOUR);
+	font-size: clamp(1rem, 3vw, 2rem);
+	font-weight: 500;
 }
-
-#pw {
-    text-align: center;
-    font-weight: 500;
-}
-
-.clear-pw {
-    font-size: calc(1rem + 1vh);
-    padding: 0.5rem 1rem;
-    border: none;
-    border-radius: 0.5rem;
-    background-color: var(--CLEAR-BTN-COLOUR);
-}
-
-
 
 /* FOOTER */
-
 footer {
-    text-align: center;
-    font-size: calc(0.5rem + 1vh);
-    margin-bottom: 1rem;
+	text-align: center;
+	font-size: clamp(1rem, 2vw, 1.5rem);
+	color: var(--FONT-COLOUR);
+	padding-bottom: 10px;
 }

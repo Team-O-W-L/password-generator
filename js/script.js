@@ -1,52 +1,75 @@
-const characters =
-	"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+[]{}|;:,.<>?";
+const year = document.getElementById("year");
+const currentYear = new Date().getFullYear();
+year.textContent = currentYear;
+const lettersSet = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+const numbersSet = "0123456789";
+const symbolsSet = "!@#$%^&*()_+[]{}|;:,.<>?";
+const generateBtn = document.getElementById("generate-pw-btn");
+const pwText = document.getElementById("pw-text");
+const digitsSelect = document.getElementById("digits");
+const lettersToggle = document.getElementById("letters-toggle");
+const numbersToggle = document.getElementById("numbers-toggle");
+const symbolsToggle = document.getElementById("symbols-toggle");
 
-let password = document.getElementById("pw");
+generateBtn.addEventListener("click", () => {
+	const pwLength = digitsSelect.value;
+	const letters = lettersToggle.checked;
+	const numbers = numbersToggle.checked;
+	const symbols = symbolsToggle.checked;
+	const password = generatePassword(pwLength, letters, numbers, symbols);
+	pwText.textContent = password;
+});
 
-function sixDigit() {
-	let newPassword = "";
-	for (i = 0; i < 6; i++) {
-		newPassword += characters[Math.floor(Math.random() * characters.length)];
-	}
-	password.textContent = newPassword;
+function getRandomChar(charSet) {
+	const index = Math.floor(Math.random() * charSet.length);
+	return charSet[index];
 }
 
-function eightDigit() {
-	let newPassword = "";
-	for (let i = 0; i < 8; i++) {
-		newPassword += characters[Math.floor(Math.random() * characters.length)];
-	}
-	password.textContent = newPassword;
+function getRandomLetter() {
+	return getRandomChar(lettersSet);
 }
 
-function tenDigit() {
-	let newPassword = "";
-	for (let i = 0; i < 10; i++) {
-		newPassword += characters[Math.floor(Math.random() * characters.length)];
-	}
-	password.textContent = newPassword;
+function getRandomNumber() {
+	return getRandomChar(numbersSet);
 }
 
-function twelveDigit() {
-	let newPassword = "";
-	for (let i = 0; i < 12; i++) {
-		newPassword += characters[Math.floor(Math.random() * characters.length)];
-	}
-	password.textContent = newPassword;
+function getRandomSymbol() {
+	return getRandomChar(symbolsSet);
 }
 
-function clearPassword() {
-	password.textContent = "";
+function generatePassword(pwLength, letters, numbers, symbols) {
+	const Password = [];
+	if (letters) {
+		Password.push(getRandomLetter());
+	}
+	if (numbers) {
+		Password.push(getRandomNumber());
+	}
+	if (symbols) {
+		Password.push(getRandomSymbol());
+	}
+	let allChars = "";
+	if (letters) allChars += lettersSet;
+	if (numbers) allChars += numbersSet;
+	if (symbols) allChars += symbolsSet;
+	while (Password.length < pwLength) {
+		const char = getRandomChar(allChars);
+		Password.push(char);
+	}
+	return Password.join("");
 }
 
 function copyPassword() {
-	const textToCopy = password.textContent;
+	navigator.clipboard.writeText(pwText.textContent);
+}
+
+function copyPassword() {
 	navigator.clipboard
-		.writeText(textToCopy)
+		.writeText(pwText.textContent)
 		.then(() => {
-			alert("Password copied to clipboard!");
+			alert("Password copied to clipboard");
 		})
 		.catch((err) => {
-			console.error("Failed to copy: ", err);
+			alert("Failed to copy password to clipboard: ", err);
 		});
 }

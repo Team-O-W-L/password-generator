@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
     <meta name="author" content="Wayne Lee">
     <title>Mini Password Generator</title>
     <link rel="stylesheet" href="css/styles.css">
@@ -12,37 +12,49 @@
 <body>
     <div class="app">
         <header>
-            <h1>Mini Passowrd Generator</h1>
+            <h1>Mini Password Generator</h1>
         </header>
         <main>
-            <div class="digit-box">
-                <h2>How many digits?</h2>
-                <div class="button-box">
-                    <div>
-                        <button class="digits" onclick="sixDigit()">6</button>
-                        <button class="digits" onclick="eightDigit()">8</button>
-                    </div>
-                    <div>
-                        <button class="digits" onclick="tenDigit()">10</button>
-                        <button class="digits" onclick="twelveDigit()">12</button>
-                    </div>
+            <div class="option-box">
+                <div class="length-selector">
+                    <p>choose password length:</p>
+                    <select name="digits" id="digits">
+                        <option value="6">6</option>
+                        <option value="8">8</option>
+                        <option value="10">10</option>
+                        <option value="12">12</option>
+                    </select>
                 </div>
+                <div class="character-types-box">
+                    <p>choose character types:</p>
+                    <input type="checkbox" id="letters-toggle" checked>
+                    <label for="letters-toggle">Letters</label>
+                    <br>
+                    <input type="checkbox" id="numbers-toggle" checked>
+                    <label for="numbers-toggle">Numbers</label>
+                    <br>
+                    <input type="checkbox" id="symbols-toggle" checked>
+                    <label for="symbols-toggle">Symbols</label>
+                </div>
+                <button id="generate-pw-btn">Generate Password</button>
             </div>
+
 
             <div class="pw-box">
                 <h2>Newly generated password:</h2>
                 <div class="pw-field">
-                    <p id="pw" onclick="copyPassword()"></p>
+                    <p id="pw-text" onclick="copyPassword()"></p>
                 </div>
-                <button class="clear-pw" onclick="clearPassword()">Clear Password</button>
+                <button class="clear-pw-btn" onclick="clearPassword()">Clear Password</button>
             </div>
 
         </main>
         <footer>
-            <p>&copy; Wayne Lee</p>
+            <p>&copy; Wayne Lee <span id="year"></span></p>
         </footer>
-        <script src="js/script.js"></script>
+
     </div>
+    <script src="js/script.js"></script>
 </body>
 
 </html>
